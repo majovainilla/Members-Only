@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token
+  # attr_accessor :remember_token
   has_secure_password
 
   validates :name, presence: true, length: { maximum: 50 }
@@ -12,5 +12,9 @@ class User < ApplicationRecord
 
   validates :password, presence: true, length: { minimum: 6 }
 
-  before_create :remember
+  # before_create :remember
+
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
 end
