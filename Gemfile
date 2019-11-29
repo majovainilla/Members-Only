@@ -25,6 +25,8 @@ gem 'bcrypt', '~> 3.1.7'
   gem 'annotate'
 # pry > irb
   gem 'pry-rails'
+gem 'bootstrap-sass', '3.4.1'
+gem 'jquery-rails', '4.3.1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
