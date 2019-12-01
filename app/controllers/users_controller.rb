@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def new
     @user = User.new
@@ -5,11 +7,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     if @user.save
-      redirect_to new_user_path
+      log_in @user
+      remember @user
+      flash[:success] = 'Welcome to the Members Only Club!'
+      redirect_to @user
     else
-      render :new
+      render 'new'
     end
   end
 
@@ -33,7 +37,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    redirect_to root_url
+    # redirect_to root_url
   end
 
   private
