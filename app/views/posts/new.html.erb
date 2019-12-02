@@ -1,0 +1,8 @@
+<h1>Type your story</h1>
+
+<%= form_for @posts do |f|%>
+  <label for="title">Title</label>
+  <%= f.text_field :title, size='80', class: 'text' %>
+  <label for="body">Content of your story</label>
+  <%= f.text_field :body, class: 'text' %>
+<%end%>
