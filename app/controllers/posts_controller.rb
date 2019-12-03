@@ -12,7 +12,7 @@ class PostsController < ApplicationController
       flash[:success] = "Post succesfully created!"
     redirect_to posts_path
     else
-      flash[:danger] = "Sorry, I can't create the post"
+      flash.now[:warning] = message
       render 'new'
     end
   end
