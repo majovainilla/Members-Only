@@ -6,5 +6,20 @@
         <%= @user.name %>
       </h1>
     </section>
+    <ul class="card"> <% @user.posts.each do |post| %>
+  <li id='post-<%= post.id %>'>
+    <article class="card-body">
+      <i class="fas fa-user-circle"></i>
+      <div class="card-title"><%= post.title %></div>
+      <div class="card-text"><%= post.body %></div>
+      <div class="data-card">
+        <div class="timestamp">
+          Posted <%= time_ago_in_words(post.created_at) %> ago by: 
+        </div>
+      </div>
+    </article>
+  </li>
+  <%end%>
+</ul>
   </aside>
 </div>
