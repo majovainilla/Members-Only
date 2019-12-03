@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+ 
   before_action :logged_in_user, only: [:new, :edit]
 
   def new
@@ -6,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "Post succesfully created!"
     redirect_to posts_path
@@ -14,10 +15,10 @@ class PostsController < ApplicationController
       flash[:danger] = "Sorry, I can't create the post"
       render 'new'
     end
-    
   end
 
   def index
+    @posts = Post.all
   end
 
   private
@@ -30,6 +31,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body, :user_id)
+    params.require(:post).permit(:title, :body)
   end
 end
