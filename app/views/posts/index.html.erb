@@ -12,6 +12,8 @@
         </div>
         <%if logged_in?%>
           <div class="user"><%= link_to post.user.name, post.user %></div>
+        <%else%>
+          <div>You must be logged in to see who posted this</div>
         <%end%>
       </div>
     </article>
