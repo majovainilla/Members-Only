@@ -1,5 +1,20 @@
-<h1>Members Only Posts</h1>
+<h1 class="text-center">Posts</h1>
 
-<ol class="posts">
-  <%= render 'posts' %>
-</ol>
+<ul class="card"> <% @posts.each do |post| %>
+  <li id='post-<%= post.id %>'>
+    <article class="card-body">
+      <i class="fas fa-user-circle"></i>
+      <div class="card-title"><%= post.title %></div>
+      <div class="card-text"><%= post.body %></div>
+      <div class="data-card">
+        <div class="timestamp">
+          Posted <%= time_ago_in_words(post.created_at) %> ago by: 
+        </div>
+        <%if logged_in?%>
+          <div class="user"><%= link_to post.user.name, post.user %></div>
+        <%end%>
+      </div>
+    </article>
+  </li>
+  <%end%>
+</ul>

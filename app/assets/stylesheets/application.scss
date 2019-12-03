@@ -12,10 +12,61 @@
  *
  */
 
-@import "bootstrap-sprockets";
 @import "bootstrap";
 
+header {
+  padding: 10px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .margin-top {
   margin-top: 100px;
+}
+
+#logo {
+  display: flex;
+  align-self: flex-start;
+  padding-top: 10px;
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+
+.card-body {
+  margin-bottom: 20px;
+}
+
+.card {
+  list-style-type: none;
+}
+
+.card-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.card-text {
+  margin-left: 10px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  padding: 10px 0 10px 15px;
+}
+
+.data-card {
+    display: flex;
+    margin-top: 5px;
+    padding: 5px 0 5px 15px;
+    color: #9c9c9c;
+}
+
+.data-card a {
+  color: #9c9c9c;
+}
+
+.timestamp {
+  margin-right: 5px;
 }
