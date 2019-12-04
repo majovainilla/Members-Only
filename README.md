@@ -2,6 +2,8 @@
 
 This project consists of using the bcrypt gem for authentication in rails. The application allows users to create posts and the authors of the posts are displayed only if as a User you are logged in.
 
+You can see the live version of the app in here: https://fierce-waters-99113.herokuapp.com/
+
 This project includes knowledge of:
 
 - Models, Views, and Controllers (MVC)
@@ -43,7 +45,14 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+# Run 'bundle exec annotate' in Terminal to add helpful comments to models.
+  gem 'annotate'
+# pry > irb
+  gem 'pry-rails'
+gem 'bootstrap-sass', '3.4.1'
+gem 'jquery-rails', '4.3.1'
+gem 'faker'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

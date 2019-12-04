@@ -1,0 +1,10 @@
+<h1>New Post</h1>
+
+<%= form_for @post do |f|%>
+  <%= render 'post_errors' %>
+  <label for="title">Title</label> <br>
+  <%= f.text_field :title, size:'80', class: 'text' %> <br> <br>
+  <label for="body">Content</label> <br>
+  <%= f.text_area :body, class: 'text-area', size:'80' %> <br> <br>
+  <%= f.submit 'Submit', class: 'btn btn-primary' %>  <br>
+<%end%>
