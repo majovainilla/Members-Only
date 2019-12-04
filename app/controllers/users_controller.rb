@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
       remember @user
       flash[:success] = 'Welcome to the Members Only Club!'
       redirect_to @user
