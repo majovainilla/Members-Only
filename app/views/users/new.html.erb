@@ -8,7 +8,7 @@
     </div>
     <div class="formcontainer">
       <%= form_for @user do |form|%>
-        <%= render 'user_errors' %>
+        <%= render 'shared/errors', object: f.object %>
         <label for="uname"><strong>Username</strong></label>
         <%= form.text_field :name, :class => 'text' %>
         <label for="mail"><strong>E-mail</strong></label>
